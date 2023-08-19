@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Lab 2-8</title>
+    <title>Lab 2-8</title>
+    <script>
+        var yourName = prompt("Please input your name.");
+        function writingYourName(name){
+            document.write("<h3>CIW JavaScript Specialist</h3>");
+            document.write(`Hi there, ${name}! Welcome!`);
+        }
+    </script>
 </head>
 
-<body>
-
-<h3>CIW JavaScript Specialist</h3>
-<hr />
+<!-- <body onload="alert(`Hi there, ${yourName}! Welcome!`)"> -->
+<body onload="writingYourName(yourName)">
 </body>
+
 </html>

@@ -11,16 +11,22 @@
 Create a function
 ***********************************************/
 
+function returnValue(){
+    var myProduct;
+    myProduct = document.myForm.input1.value * document.myForm.input2.value;
+    return myProduct;
+}
+
 //-->
 </script>
 </head>
 
 <!-- Add an onload event handler to call the function -->
 
-<body >
-
-<h3>CIW JavaScript Specialist</h3>
-<hr />
-
+<body>
+    <form name="myForm">
+        Multiply <input type="text" name="input1" /> By <input type=""text" name="input2" />
+        <input type="button" value="Result" onclick="alert('The result is ' + returnValue() + '.');">
+    </form>
 </body>
 </html>

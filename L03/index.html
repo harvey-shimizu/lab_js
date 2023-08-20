@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var color = "red";
+
+        function whatIsThis() {
+            var color = "blue";
+            alert(this);
+            alert(this.color);
+        }
+        // whatIsThis();
+
+        var fruit = ["oranges", "pears"];
+        var obj1 = { x: "object reference 1" };
+        var obj2 = { x: "object reference 2" };
+        var getValueLater = example.bind(obj2, "kiwis", "papayas");
+        var x = "global reference";
+
+        function example(arg1, arg2) {
+            return this.x + " arg1: " + arg1 + " arg2 " + arg2;
+        }
+
+        console.log(example("pineapples", "grapefruit"));
+        //global reference arg1: pineapples arg2 grapefruit
+        console.log(example.apply(obj1, fruit));
+        //object reference 1 arg1: oranges arg2 pears
+        console.log(example.call(obj1, "apples", "bannanas"));
+        //object reference 1 arg1: apples arg2 bannanas
+        console.log(getValueLater());
+        //object reference 2 arg1: kiwis arg2 papayas
+
+    </script>
+</head>
+
+<body onload="alert(this)">
+    <h1 onclick="alert(this)">CIW JavaScript Specialist</h1>
+</body>
+
+</html>
